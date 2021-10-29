@@ -21,7 +21,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'exit 1'
+        sh 'docker build -t app:latest .'
       }
     }
 
