@@ -32,11 +32,5 @@ pipeline {
       }
     }
 
-    stage('Delivery') {
-      steps {
-        sh 'exit 1'
-      }
-    }
-
   }
 }
