@@ -26,13 +26,13 @@ pipeline {
       }
     }
 
-    stage('Delivery') {
+    stage('Deploy') {
       steps {
-        sh 'exit 1'
+        sh 'docker run -tdi -p 5000:5000 app:latest'
       }
     }
 
-    stage('Deploy') {
+    stage('Delivery') {
       steps {
         sh 'exit 1'
       }
