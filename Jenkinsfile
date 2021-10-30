@@ -22,7 +22,7 @@ pipeline {
     stage('Build') {
       agent any
       steps {
-        sh 'docker build -t app:latest .'
+        sh 'docker build . -t app:latest'
       }
     }
 
