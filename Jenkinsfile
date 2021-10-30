@@ -8,8 +8,19 @@ pipeline {
     }
 
     stage('Code Quality') {
-      steps {
-        sh 'python3 -m pylint app.py'
+      parallel {
+        stage('Code Quality') {
+          steps {
+            sh 'python3 -m pylint app.py'
+          }
+        }
+
+        stage('security') {
+          steps {
+            sh 'bash grep-it.sh ./app.py'
+          }
+        }
+
       }
     }
 
