@@ -3,9 +3,7 @@ pipeline {
   stages {
     stage('Preparing the environment') {
       steps {
-        @echo off
-        '/c/Users/LENOVO/AppData/Local/Programs/Python/Python310/python.exe'
-        sh 'python -m pip install -r requirements.txt'
+        sh 'pip install -r requirements.txt'
       }
     }
 
