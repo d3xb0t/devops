@@ -1,9 +1,12 @@
 pipeline {
   agent any
-  stages {
-    stage('Preparing the environment') {
+  stage('Setup') { // Install any dependencies you need to perform testing
       steps {
-        sh 'pip install -r requirements.txt'
+        script {
+          sh """
+          pip install -r requirements.txt
+          """
+        }
       }
     }
 
